@@ -24,6 +24,11 @@ const GlobalStyle = createGlobalStyle`
 		content: '$';
 		position: relative;
 	}
+	.flex {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
 	/*-- Nav --*/
 
@@ -33,7 +38,8 @@ const GlobalStyle = createGlobalStyle`
 		border-right: 1px solid #F2F0FF;
 		background-color: white;
 		height: 100vh;
-		overflow: clip;
+		position: fixed;
+		z-index: 1;
 	}
 	.nav-container .nav-body {
 		height: 100vh;

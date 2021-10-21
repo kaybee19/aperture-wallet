@@ -11,7 +11,8 @@ const Body = styled('div')({
   top: '-2px',
   display: 'flex',
   justifyContent: 'right',
-  padding: '2px 4px',
+  padding: '0px 4px',
+  boxShadow: '0 2px 5px 1px rgba(0,0,0,.075)',
   borderRadius: '8px',
   marginLeft: 'auto',
   backgroundColor: '#EAC435',
@@ -23,7 +24,7 @@ export default function Badge() {
 
 	return (
 		<Body>
-			<Typography variant='caption' sx={{fontSize: '10px', fontWeight: '600'}}>Earn+</Typography>
+			<Typography variant='caption' sx={{fontSize: '10px', fontWeight: '600'}}>earn+</Typography>
 		</Body>
 	);
 };

@@ -16,40 +16,66 @@ import Performance from './pages/Performance';
 import News from './pages/News';
 import Alarm from './pages/Alarm';
 import Governance from './pages/Governance';
-// import NotFound from './pages/NotFound';
+import NotFound from './pages/NotFound';
 
 const Container = styled('div')({
-  display: 'flex'
+  display: 'flex',
 });
 
 
 const Wrapper = styled('div')({
-  width: 'calc(100% - 276px)'
+  width: 'calc(100% - 276px)',
+  marginLeft: 'auto'
 });
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Container>
-        <Navbar />
-          <Wrapper>
-            <Header />
-            <Switch>
-              <Route exact path='/' component={Home}>
-                { <Redirect to="/invest" /> }
-              </Route>
-              <Route exact path='/invest' component={Invest} />
-              <Route exact path='/performance' component={Performance} />
-              <Route exact path='/news' component={News} />
-              <Route exact path='/alarm' component={Alarm} />
-              <Route exact path='/governance' component={Governance} />
-            </Switch>
-            {/*<Footer />*/}
-          </Wrapper>
-      </Container>
+      <Switch>
+        <RouteWrapper exact path="/" page={Home} />
+        <Route component={container} />
+      </Switch>
     </BrowserRouter>
   );
 }
+
+function RouteWrapper({ page: Page, privateRoute, ...rest }) {
+
+  const authCheck = localStorage.getItem("auth");
+  return (
+    <Route
+      {...rest}
+      render={
+        (props) => (authCheck === null) && privateRoute ? <Redirect to="/" /> : <Page {...props} />
+      }
+    />
+  );
+}
+
+
+const container = () => {
+
+  const authCheck = localStorage.getItem("auth");
+
+  return (
+    <div>
+      <Container>
+        <Navbar />
+        <Wrapper>
+          <Header />
+          <Route exact path='/invest' render={() => JSON.parse(authCheck) === null ? <Redirect to='/' /> : <Invest />} />
+          <Route exact path='/performance' render={() => JSON.parse(authCheck) === null ? <Redirect to='/' /> : <Performance />} />
+          <Route exact path='/news' render={() => JSON.parse(authCheck) === null ? <Redirect to='/' /> : <News />} />
+          <Route exact path='/alarm' render={() => JSON.parse(authCheck) === null ? <Redirect to='/' /> : <Alarm />} />
+          <Route exact path='/governance' render={() => JSON.parse(authCheck) === null ? <Redirect to='/' /> : <Governance />} />
+          <Route render={() => JSON.parse(authCheck) === null ? <Redirect to='/' /> : <Redirect to='/invest' />} />
+          {/*<Footer />*/}
+        </Wrapper>
+      </Container>
+    </div>
+    )
+  };
+
 
 export default App;
