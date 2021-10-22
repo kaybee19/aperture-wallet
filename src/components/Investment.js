@@ -105,6 +105,7 @@ const Flex = styled('div')({
 	flexDirection: 'column',
 	'&:first-child': {
 		marginLeft: '2rem',
+		width: '125px',
 	},
 	'&:last-child': {
 		textAlign: 'end',
@@ -174,16 +175,16 @@ export default function Investment() {
   };
 
 	const assets = [
-		{ img: avaIcon, backImg: binanceIcon, token: 'AVA', asset: 'AVA/BNB', assetType: 'Sushiswap', liquidity: 2012875178, value: 22000, percent: .25 },
-		{ img: yfiIcon, backImg: ethIcon, token: 'YFI', asset: 'YFI/ETH', assetType: 'Sushiswap', liquidity: 1526781091, value: 22000, percent: .16 },
-		{ img: ethIcon, backImg: daiIcon, token: 'ETH', asset: 'ETH/DAI', assetType: 'Sushiswap', liquidity: 915273091, value: 35100, percent: .14 },
-		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Uniswap V2', liquidity: 761829012, value: 42000, percent: .16 },
-		{ img: btcIcon, backImg: ethIcon, badge: true, token: 'BTC', asset: 'renBTC', assetType: 'Curve', liquidity: 701928321, value: 836866944, percent: .63 },
-		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'stETH', assetType: 'Terra', liquidity: 673890218, value: 20000, percent: .29 },
-		{ img: binanceIcon, backImg: daiIcon, token: 'BNB', asset: 'BNB/DAI', assetType: 'Sushiswap', liquidity: 621829031, value: 35100, percent: .54 },
-		{ img: btcIcon, backImg: ethIcon, token: 'BTC', asset: 'Y Curve', assetType: 'Curve', liquidity: 581902129, value: 836866944, percent: .13 },
-		{ img: polygonIcon, backImg: btcIcon, badge: true, token: 'MATIC', asset: 'mcBTC', assetType: 'Terra', liquidity: 542678254, value: 20000, percent: .41 },
-		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Uniswap V2', liquidity: 498301923, value: 42000, percent: .35 },
+		{ img: avaIcon, backImg: binanceIcon, token: 'AVA', asset: 'AVA/BNB', assetType: 'Ethereum', liquidity: 2012875178, value: 22000, percent: .25 },
+		{ img: yfiIcon, backImg: ethIcon, token: 'YFI', asset: 'YFI/ETH', assetType: 'Ethereum', liquidity: 1526781091, value: 22000, percent: .16 },
+		{ img: ethIcon, backImg: daiIcon, token: 'ETH', asset: 'ETH/DAI', assetType: 'Ethereum', liquidity: 915273091, value: 35100, percent: .14 },
+		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Bitcoin', liquidity: 761829012, value: 42000, percent: .16 },
+		{ img: btcIcon, backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mQQQ', assetType: 'Polygon', liquidity: 701928321, value: 836866944, percent: .63 },
+		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mHOOD', assetType: 'Binance', liquidity: 673890218, value: 20000, percent: .29 },
+		{ img: binanceIcon, backImg: daiIcon, token: 'BNB', asset: 'BNB/DAI', assetType: 'Ethereum', liquidity: 621829031, value: 35100, percent: .54 },
+		{ img: btcIcon, backImg: ethIcon, token: 'BTC', asset: 'Δ-neutral-mCOIN', assetType: 'Polygon', liquidity: 581902129, value: 836866944, percent: .13 },
+		{ img: polygonIcon, backImg: btcIcon, badge: true, token: 'MATIC', asset: 'mcBTC', assetType: 'Binance', liquidity: 542678254, value: 20000, percent: .41 },
+		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Bitcoin', liquidity: 498301923, value: 42000, percent: .35 },
 	];
 
 	return (
@@ -200,9 +201,9 @@ export default function Investment() {
 		    />
 			</Box>
 			<Grid sx={{borderBottom: '1px solid #F2F0FF'}} container>
-				<Grid item xs={12} md={4}><Typography sx={{marginLeft: '1.5rem', fontWeight: 600}} variant='overline'>Available Pools</Typography></Grid>
-				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '4.5rem', fontWeight: 600}} variant='overline'>Liquidity</Typography></Grid>
-				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '6rem', fontWeight: 600}} variant='overline'>APR</Typography></Grid>
+				<Grid item xs={12} md={5}><Typography sx={{marginLeft: '1.5rem', fontWeight: 600}} variant='overline'>Available Pools</Typography></Grid>
+				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '2.5rem', fontWeight: 600}} variant='overline'>Liquidity</Typography></Grid>
+				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '3.5rem', fontWeight: 600}} variant='overline'>APR</Typography></Grid>
 			</Grid>
 			{
 				assets.map((ass, i) => (

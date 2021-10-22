@@ -14,7 +14,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 // Icons
 import { fortmatic, keystone, ledger, metamask, opera, xdefi } from '../assets/images';
 
- const MyButton = styled(Button)({
+const MyButton = styled(Button)({
 	padding: '1rem',
 	borderRadius: 8,
 	marginTop: '1rem',
@@ -41,7 +41,7 @@ import { fortmatic, keystone, ledger, metamask, opera, xdefi } from '../assets/i
 export default function ConnectWallet() {
   const [open, setOpen] = React.useState(false);
 	const history = useHistory();
-	
+
   const handleClickOpen = () => {
     setOpen(true);
   };

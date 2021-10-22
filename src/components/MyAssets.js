@@ -68,6 +68,7 @@ const Flex = styled('div')({
 	minWidth: '80px',
 	flexDirection: 'column',
 	'&:last-child': {
+		marginRight: 0,
 		textAlign: 'end',
 	},
 	'& .percentClass': {
@@ -109,11 +110,11 @@ const AssetContainer = (props) => {
 export default function MyAssets() {
 
 	const assets = [
-		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'whETH', assetType: 'Terra', investment: 10000, value: 20000, percent: 100 },
-		{ img: ethIcon, backImg: daiIcon, token: 'ETH', asset: 'DAI/ETH', assetType: 'Sushiswap', investment: 25000, value: 35100, percent: 40 },
-		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Uniswap V2', investment: 37500, value: 42000, percent: 15 },
-		{ img: btcIcon, backImg: ethIcon, badge: true, token: 'BTC', asset: 'stBTC', assetType: 'Terra', investment: 21000, value: 20940, percent: -5 },
-		{ img: yfiIcon, backImg: ethIcon, token: 'YFI', asset: 'YFI/ETH', assetType: 'Sushiswap', investment: 25700, value: 22000, percent: -10 },
+		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mSQ', assetType: 'Binance', investment: 10000, value: 20000, percent: 100 },
+		{ img: ethIcon, backImg: daiIcon, token: 'ETH', asset: 'DAI/ETH', assetType: 'Ethereum', investment: 25000, value: 35100, percent: 40 },
+		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Bitcoin', investment: 37500, value: 42000, percent: 15 },
+		{ img: btcIcon, backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mSPY', assetType: 'Binance', investment: 21000, value: 20940, percent: -5 },
+		{ img: yfiIcon, backImg: ethIcon, token: 'YFI', asset: 'YFI/ETH', assetType: 'Ethereum', investment: 25700, value: 22000, percent: -10 },
 	]
 
 	return (

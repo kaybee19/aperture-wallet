@@ -91,8 +91,6 @@ const GlobalStyle = createGlobalStyle`
 	}
 	.nav-container .user-details {
 		background-color: transparent;
-		width: 125px;
-		max-width: 125px;
 	}
 	.nav-container .user-details .nav-hr {
 		height: 3.3px;

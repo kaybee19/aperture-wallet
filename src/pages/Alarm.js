@@ -7,7 +7,7 @@ export default function Alarm() {
 
 	return (
 		<React.Fragment>
-			Alarm page
+
 		</React.Fragment>
 	);
 };

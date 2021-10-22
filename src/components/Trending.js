@@ -65,6 +65,7 @@ const Flex = styled('div')({
 	minWidth: '80px',
 	flexDirection: 'column',
 	'&:last-child': {
+		marginRight: 0,
 		textAlign: 'end',
 	},
 	'& .percentClass': {
@@ -101,11 +102,11 @@ const AssetContainer = (props) => {
 export default function MyAssets() {
 
 	const assets = [
-		{ img: sushiIcon, asset: 'MATIC/ETH', assetType: 'Sushiswap', investment: 10128, value: 48.1, percent: 100 },
-		{ img: uniIcon, asset: 'DAI/ETH', assetType: 'Uniswap V2', investment: 25129, value: 40.2, percent: 40 },
-		{ img: tetherIcon, asset: 'USDT/ETH', assetType: 'Uniswap V2', investment: 37509, value: 36.2, percent: 15 },
-		{ img: tetherIcon, asset: 'USDT/BTC', assetType: 'Binance', investment: 21091, value: 31.8, percent: -5 },
-		{ img: yfiIcon, asset: 'YFI/BTC', assetType: 'Sushiswap', investment: 25728, value: 27.7, percent: -10 },
+		{ img: sushiIcon, asset: 'MATIC/ETH', assetType: 'Binance', investment: 10128, value: 48.1, percent: 100 },
+		{ img: uniIcon, asset: 'DAI/ETH', assetType: 'Ethereum', investment: 25129, value: 40.2, percent: 40 },
+		{ img: tetherIcon, asset: 'USDT/ETH', assetType: 'Ethereum', investment: 37509, value: 36.2, percent: 15 },
+		{ img: tetherIcon, asset: 'USDT/BTC', assetType: 'Polygon', investment: 21091, value: 31.8, percent: -5 },
+		{ img: yfiIcon, asset: 'YFI/BTC', assetType: 'Bitcoin', investment: 25728, value: 27.7, percent: -10 },
 	]
 
 	return (

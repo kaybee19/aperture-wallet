@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 const Body = styled('div')({
   position: 'absolute',
   left: '0',
-  right: '-40px',
+  right: '-45px',
   top: '-2px',
   display: 'flex',
   justifyContent: 'right',
@@ -24,7 +24,7 @@ export default function Badge() {
 
 	return (
 		<Body>
-			<Typography variant='caption' sx={{fontSize: '10px', fontWeight: '600'}}>earn+</Typography>
+			<Typography variant='caption' sx={{fontSize: '10px', fontWeight: '600'}}>invest+</Typography>
 		</Body>
 	);
 };

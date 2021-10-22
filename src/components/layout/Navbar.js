@@ -10,8 +10,10 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fab from '@mui/material/Fab';
+import { styled } from '@mui/system';
 
 // Icons
+import ArrowUp from '@mui/icons-material/ArrowDropUp';
 import InvestIcon from '@mui/icons-material/AccountBalanceWallet';
 import PerformanceIcon from '@mui/icons-material/CompareArrows';
 import NewsIcon from '@mui/icons-material/ChromeReaderMode';
@@ -21,6 +23,17 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import RedeemIcon from '@mui/icons-material/Redeem';
 import PersonIcon from '@mui/icons-material/PersonOutline';
 import ChevronLeft from '@mui/icons-material/ChevronLeft';
+
+const PaperWrap = styled(Paper)({
+  display: 'flex',
+  width: '100%',
+  justifyContent: 'space-between'
+});
+
+const ArrowType = styled(Typography)({
+  display: 'flex',
+	alignItems: 'center'
+});
 
 export default function Navbar() {
 
@@ -46,21 +59,17 @@ export default function Navbar() {
 					</Fab>*/}
 				</Box>
 				<Box className='nav-user'>
-					<Paper sx={{backgroundImage: `url(${user})`}} className='user-card' elevation={0}>
-						{/*<Typography variant='h4'>J</Typography>*/}
-					</Paper>
-					<Paper className='user-details' elevation={0}>					
-						<Typography sx={{ fontWeight: 'bold' }} variant='caption'>John Doe</Typography>
-						<hr className='nav-hr' />
-						<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+					<PaperWrap className='user-details' elevation={0}>
+						<div>
+							<Typography sx={{ fontWeight: '500', fontSize: 10, color: '#668A99' }}>My Portfolio</Typography>
+							<Typography sx={{ fontWeight: '500', color: '#16141F', marginTop: '10px' }} variant='h6'>$47,021</Typography>
+						</div>
+						<Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+							<Typography sx={{ fontWeight: '500', fontSize: 10, color: '#668A99' }} variant='caption'>Profit</Typography>
+							<ArrowType sx={{ color: '#16141F', fontWeight: '500'}} variant='caption'><ArrowUp sx={{ fontSize: '22px', color: '#50af94' }} />23.5%</ArrowType>
 							<Typography sx={{ fontSize: 10, color: '#668A99' }} variant='caption'>0x49ef...6dc8</Typography>
-							<Typography sx={{ fontSize: 10, color: '#668A99' }} variant='caption'>Lv. 1</Typography>
 						</Box>
-					</Paper>
-				</Box>
-				<Box className='nav-util'>
-					<Paper elevation={0} className='uitl-card'><PersonIcon className='util-icon' /> Profile</Paper>
-					<Paper elevation={0} className='uitl-card'><RedeemIcon className='util-icon' />Rewards</Paper>
+					</PaperWrap>
 				</Box>
 				<Box className='nav-items'>
 					{

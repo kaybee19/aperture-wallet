@@ -27,61 +27,61 @@ const Container = styled('div')({
 	}
 });
 
-const Nav = styled('nav')({
-	'& > div': {
-	  justifyContent: 'space-between',
-	  width: 'auto',
-	}
-});
+// const Nav = styled('nav')({
+// 	'& > div': {
+// 	  justifyContent: 'space-between',
+// 	  width: 'auto',
+// 	}
+// });
 
-const Footer = styled('nav')({
-	marginTop: '2rem',
-	'& > div': {
-	  justifyContent: 'space-between',
-	  width: 'auto',
-	}
-});
+// const Footer = styled('nav')({
+// 	marginTop: '2rem',
+// 	'& > div': {
+// 	  justifyContent: 'space-between',
+// 	  width: 'auto',
+// 	}
+// });
 
-const Wrapper = styled('div')({
-	display: 'flex',
-	width: 'fit-content',
-	justifyContent: 'center',
-	alignItems: 'center',
-	padding: '0rem',
-});
+// const Wrapper = styled('div')({
+// 	display: 'flex',
+// 	width: 'fit-content',
+// 	justifyContent: 'center',
+// 	alignItems: 'center',
+// 	padding: '0rem',
+// });
 
-const Image = styled('img')({
-	backgroundColor: 'white',
-	padding: '.25rem',
-	borderRadius: '50%',
-	border: '2px solid #F2F0FF',
-	marginRight: '1rem',
-	boxShadow: '0 2px 5px 1px rgba(0,0,0,.05)'
-});
+// const Image = styled('img')({
+// 	backgroundColor: 'white',
+// 	padding: '.25rem',
+// 	borderRadius: '50%',
+// 	border: '2px solid #F2F0FF',
+// 	marginRight: '1rem',
+// 	boxShadow: '0 2px 5px 1px rgba(0,0,0,.05)'
+// });
 
-const Body = styled('div')({
-	display: 'flex',
-	flexDirection: 'column',
-	alignItems: 'center',
-	justifyContent: 'center',
-	textAlign: 'center',
-	height: '85%'
-});
+// const Body = styled('div')({
+// 	display: 'flex',
+// 	flexDirection: 'column',
+// 	alignItems: 'center',
+// 	justifyContent: 'center',
+// 	textAlign: 'center',
+// 	height: '85%'
+// });
 
-const Icons = styled('div')({
-	display: 'flex',
-	'& a': {
-		marginLeft: '.75rem',
-	}
-});
+// const Icons = styled('div')({
+// 	display: 'flex',
+// 	'& a': {
+// 		marginLeft: '.75rem',
+// 	}
+// });
 
-const Icon = (props) => {
-	return(
-		<a target='_blank' rel="noreferrer" href={props.link}>
-			<span style={{ color: 'black' }}>{props.icon}</span>
-		</a>
-	)
-};
+// const Icon = (props) => {
+// 	return(
+// 		<a target='_blank' rel="noreferrer" href={props.link}>
+// 			<span style={{ color: 'black' }}>{props.icon}</span>
+// 		</a>
+// 	)
+// };
 
 export default function Home() {
 
@@ -101,7 +101,7 @@ export default function Home() {
 
 	return (
 		<Container>
-			<Nav>
+{/*			<Nav>
 				<Wrapper>
 					<Link className='linkClass flex' to='/'>
 						<Image src={logo} width='33' alt="logo" />
@@ -142,7 +142,7 @@ export default function Home() {
 						}					
 					</Icons>
 				</Wrapper>
-			</Footer>
+			</Footer>*/}
 		</Container>
 	);
 };

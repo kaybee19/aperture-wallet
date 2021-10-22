@@ -42,10 +42,15 @@ export default function Portfolio(props) {
 
   const [currency, setCurrency] = React.useState('ETH');
 
+  const [currency2, setCurrency2] = React.useState('ETH');
+
   const handleChange = (event) => {
     setCurrency(event.target.value);
   };
 
+  const handleChange2 = (event) => {
+    setCurrency2(event.target.value);
+  };
 
   const currencies = [
     { icon: avaIcon, name: 'AVA' },
@@ -55,10 +60,20 @@ export default function Portfolio(props) {
     { icon: ethIcon, name: 'ETH' },
   ]
 
+  const currencies2 = [
+    { icon: avaIcon, name: 'AVA' },
+    { icon: binanceIcon, name: 'BNB' },
+    { icon: fantomIcon, name: 'FTM' },
+    { icon: polygonIcon, name: 'MATIC' },
+    { icon: ethIcon, name: 'ETH' },
+  ]
+
+
   return (
     <AccordionDet>
       <Typography variant='body2'>
-        { !props.invest && `Deposit the underlying vault asset directly using almost any token in your wallet. Please be aware we use a default slippage limit of 1%. Withdrawals return the vault's underlying token into one of our supported assets.` }
+        <p style={{marginTop:0}}>Deposit the underlying vault asset directly using almost any token in your wallet. Please be aware we use a default slippage limit of 1%. Withdrawals return the vault's underlying token into one of our supported assets.</p>
+        <p>{ !props.invest && `Withdrawals return the vault's underlying token into one of our supported assets. Invest the underlying vault asset directly using almost any token in your wallet. Please be aware we use a default slippage limit.` }</p>
       </Typography>
       { !props.invest &&
         <React.Fragment>
@@ -91,7 +106,7 @@ export default function Portfolio(props) {
                 }}
               />
             </FormControl>
-            <Button sx={{ backgroundColor: '#7C65FA', height: '42px', marginTop: '16px'}} variant="contained">Deposit</Button>
+            <Button sx={{ backgroundColor: '#7C65FA!important', height: '42px', marginTop: '16px'}} variant="contained">Deposit</Button>
           </Container>
         </div>
         <div>
@@ -114,17 +129,17 @@ export default function Portfolio(props) {
             <TextField
               id="outlined-select-currency"
               select
-              value={currency}
-              onChange={handleChange}
+              value={currency2}
+              onChange={handleChange2}
               sx={{margin:'0 1rem'}}
             >
-              {currencies.map((option) => (
+              {currencies2.map((option) => (
                 <MenuItem key={option.name} value={option.name}>
                   <img style={{height: 20, marginRight: 10}} src={option.icon} alt="currency icon" width='20' /> {option.name}
                 </MenuItem>
               ))}
             </TextField>
-            <Button sx={{ backgroundColor: '#7C65FA', height: '42px', marginTop: '16px'}} variant="contained">Withdraw</Button>
+            <Button sx={{ backgroundColor: '#7C65FA!important', height: '42px', marginTop: '16px'}} variant="contained">Withdraw</Button>
           </Container>
         </div>
       </React.Fragment>
@@ -161,7 +176,7 @@ export default function Portfolio(props) {
                 }}
               />
             </FormControl>
-            <Button sx={{ backgroundColor: '#7C65FA', height: '42px', marginTop: '16px'}} variant="contained">Invest</Button>
+            <Button sx={{ backgroundColor: '#7C65FA!important', height: '42px', marginTop: '16px'}} variant="contained">Invest</Button>
           </Container>
         </div>
         </React.Fragment>

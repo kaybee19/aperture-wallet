@@ -98,6 +98,7 @@ const Flex = styled('div')({
 	minWidth: '80px',
 	flexDirection: 'column',
 	'&:first-child': {
+    width: '125px',
 		marginLeft: '2rem',
 	},
 	'&:last-child': {
@@ -157,20 +158,20 @@ const AssetContainer = (props) => {
 export default function Portfolio() {
 
 	const assets = [
-		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'whETH', assetType: 'Terra', tvl: 10, value: 20000, percent: 100 },
-		{ img: ethIcon, backImg: daiIcon, token: 'ETH', asset: 'DAI/ETH', assetType: 'Sushiswap', tvl: 25, value: 35100, percent: 40 },
-		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Uniswap V2', tvl: 37, value: 42000, percent: 15 },
-		{ img: btcIcon, backImg: ethIcon, badge: true, token: 'BTC', asset: 'stBTC', assetType: 'Terra', tvl: -11, value: 20940, percent: -5 },
-		{ img: yfiIcon, backImg: ethIcon, token: 'YFI', asset: 'YFI/ETH', assetType: 'Sushiswap', tvl: -15, value: 22000, percent: -10 },
+		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mSQ', assetType: 'Ethereum', tvl: 10, value: 20000, percent: 100 },
+		{ img: ethIcon, backImg: daiIcon, token: 'ETH', asset: 'DAI/ETH', assetType: 'Binance', tvl: 25, value: 35100, percent: 40 },
+		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Ethereum', tvl: 37, value: 42000, percent: 15 },
+		{ img: btcIcon, backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mSPY', assetType: 'Bitcoin', tvl: -11, value: 20940, percent: -5 },
+		{ img: yfiIcon, backImg: ethIcon, token: 'YFI', asset: 'YFI/ETH', assetType: 'Ethereum', tvl: -15, value: 22000, percent: -10 },
 	]
 
 	return (
 		<Container>
 			<Grid sx={{borderBottom: '1px solid #F2F0FF'}} container>
 				<Grid item={12} md={1}></Grid>
-				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '2.5rem', fontWeight: 600}} variant='overline'>Asset</Typography></Grid>
-				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '4.5rem', fontWeight: 600}} variant='overline'>TVL</Typography></Grid>
-				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '5.5rem', fontWeight: 600}} variant='overline'>APR</Typography></Grid>
+				<Grid item xs={12} md={4}><Typography sx={{marginLeft: '2.5rem', fontWeight: 600}} variant='overline'>Asset</Typography></Grid>
+				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '3rem', fontWeight: 600}} variant='overline'>TVL</Typography></Grid>
+				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '3rem', fontWeight: 600}} variant='overline'>APR</Typography></Grid>
 			</Grid>
 			{
 				assets.map((ass, i) => (
