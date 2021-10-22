@@ -115,9 +115,6 @@ export default function Navbar() {
 				</Box>
 				<hr />
 				<Paper elevation={0} className='nav-settings'>
-					<Link className='linkClass' to='/'>
-						<img src={logo} width='33' alt="logo" />
-					</Link>
 					<Wrapper>
 						<Icons>
 							{
