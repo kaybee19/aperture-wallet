@@ -182,8 +182,8 @@ export default function Investment() {
 		{ img: btcIcon, backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mQQQ', assetType: 'Polygon', liquidity: 701928321, value: 836866944, percent: .63 },
 		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mHOOD', assetType: 'Binance', liquidity: 673890218, value: 20000, percent: .29 },
 		{ img: binanceIcon, backImg: daiIcon, token: 'BNB', asset: 'BNB/DAI', assetType: 'Ethereum', liquidity: 621829031, value: 35100, percent: .54 },
-		{ img: btcIcon, backImg: ethIcon, token: 'BTC', asset: 'Δ-neutral-mCOIN', assetType: 'Polygon', liquidity: 581902129, value: 836866944, percent: .13 },
-		{ img: polygonIcon, backImg: btcIcon, badge: true, token: 'MATIC', asset: 'mcBTC', assetType: 'Binance', liquidity: 542678254, value: 20000, percent: .41 },
+		{ img: btcIcon, backImg: ethIcon, token: 'BTC', asset: 'mcBTC', assetType: 'Polygon', liquidity: 581902129, value: 836866944, percent: .13 },
+		{ img: polygonIcon, backImg: btcIcon, badge: true, token: 'MATIC', asset: 'Δ-neutral-mCOIN', assetType: 'Binance', liquidity: 542678254, value: 20000, percent: .41 },
 		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Bitcoin', liquidity: 498301923, value: 42000, percent: .35 },
 	];
 
