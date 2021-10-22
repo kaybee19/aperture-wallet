@@ -37,7 +37,7 @@ const Wrapper = styled('div')({
 	top: 0,
   justifyContent: 'space-evenly',
   '&:hover': {
-  	backgroundColor: '#f3f6fb',
+  	backgroundColor: '#f0f0f2',
   	borderRadius: 8,
   	cursor: 'pointer',
   	transition: '.25s',
@@ -178,18 +178,18 @@ export default function Investment() {
 		{ img: avaIcon, backImg: binanceIcon, token: 'AVA', asset: 'AVA/BNB', assetType: 'Ethereum', liquidity: 2012875178, value: 22000, percent: .25 },
 		{ img: yfiIcon, backImg: ethIcon, token: 'YFI', asset: 'YFI/ETH', assetType: 'Ethereum', liquidity: 1526781091, value: 22000, percent: .16 },
 		{ img: ethIcon, backImg: daiIcon, token: 'ETH', asset: 'ETH/DAI', assetType: 'Ethereum', liquidity: 915273091, value: 35100, percent: .14 },
-		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Bitcoin', liquidity: 761829012, value: 42000, percent: .16 },
+		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Solana', liquidity: 761829012, value: 42000, percent: .16 },
 		{ img: btcIcon, backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mQQQ', assetType: 'Polygon', liquidity: 701928321, value: 836866944, percent: .63 },
-		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mHOOD', assetType: 'Binance', liquidity: 673890218, value: 20000, percent: .29 },
+		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mHOOD', assetType: 'Binance Smart Chain', liquidity: 673890218, value: 20000, percent: .29 },
 		{ img: binanceIcon, backImg: daiIcon, token: 'BNB', asset: 'BNB/DAI', assetType: 'Ethereum', liquidity: 621829031, value: 35100, percent: .54 },
 		{ img: btcIcon, backImg: ethIcon, token: 'BTC', asset: 'mcBTC', assetType: 'Polygon', liquidity: 581902129, value: 836866944, percent: .13 },
-		{ img: polygonIcon, backImg: btcIcon, badge: true, token: 'MATIC', asset: 'Δ-neutral-mCOIN', assetType: 'Binance', liquidity: 542678254, value: 20000, percent: .41 },
-		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Bitcoin', liquidity: 498301923, value: 42000, percent: .35 },
+		{ img: polygonIcon, backImg: btcIcon, badge: true, token: 'MATIC', asset: 'Δ-neutral-mCOIN', assetType: 'Binance Smart Chain', liquidity: 542678254, value: 20000, percent: .41 },
+		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Solana', liquidity: 498301923, value: 42000, percent: .35 },
 	];
 
 	return (
 		<Container>
-			<Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+			<Box sx={{ marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 				<Search invest />
 		    <TablePagination
 		      component="div"
@@ -201,7 +201,7 @@ export default function Investment() {
 		    />
 			</Box>
 			<Grid sx={{borderBottom: '1px solid #F2F0FF'}} container>
-				<Grid item xs={12} md={5}><Typography sx={{marginLeft: '1.5rem', fontWeight: 600}} variant='overline'>Available Pools</Typography></Grid>
+				<Grid item xs={12} md={5}><Typography sx={{marginLeft: '6rem', fontWeight: 600}} variant='overline'>Pools</Typography></Grid>
 				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '2.5rem', fontWeight: 600}} variant='overline'>Liquidity</Typography></Grid>
 				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '3.5rem', fontWeight: 600}} variant='overline'>APR</Typography></Grid>
 			</Grid>

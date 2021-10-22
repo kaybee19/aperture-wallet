@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     min-width: 275px;
 		width: 275px;
 		border-right: 1px solid #F2F0FF;
-		background-color: white;
+		background-color: #f0f0f2;
 		height: 100vh;
 		position: fixed;
 		z-index: 1;
@@ -62,15 +62,14 @@ const GlobalStyle = createGlobalStyle`
     background-color: #F7F7FF;
 	}
 	.nav-container .nav-user {
-		margin-top: 2.5rem;
 		border-radius: 8px;
 		padding: .5rem 1rem;
-		background-color: #F4F6FC;
+		background-color: white;
+		border: 1px solid #f0f0f2;
 		transition: .25s;
 		display: flex;
 		justify-content: space-between;
 		&:hover {
-			background-color: #f0f5f9;
 			box-shadow: 0 2px 2.5px 1px rgba(0,0,0,.01);
 			cursor: pointer;
 		}
@@ -135,27 +134,34 @@ const GlobalStyle = createGlobalStyle`
 		padding: .75rem;
 		transition: .25s;
 		display: flex;
-		background-color: rgb(244 246 252 / 25%);
+		background-color: #f0f0f2;
 		align-items: center;
 		&:hover {
 			cursor: pointer;
-			background-color: #F4F6FC;
+			background-color: #e6e7e9;
 		}
 	}
 	.nav-container .nav-items .active {
-		background-color: #674DFA;
 		& * {
-			color: white;
+			color: #5234F9;
+			font-weight: 600;
 		}
-	}
-	.nav-container .item.nav-settings {
-		margin-top: auto;
-    margin-bottom: 2rem;
 	}
 	.nav-container .item-icon > svg {
 		font-size: 22px;
 		margin-right: .5rem;
 		color: #657794;
+	}
+	.nav-container .nav-settings {
+		margin-top: auto;
+		background-color: transparent;
+    margin-bottom: 2rem;
+    & div {
+    	margin-top: .75rem;
+    	display: flex;
+    	justify-content: space-between;
+    	width: 100%;
+    }
 	}
 
 	/*-- Header --*/
@@ -169,11 +175,17 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 	.header .header-button {
-		background-color: white;
+		// background-color: white;
 		border-radius: 8px;
+		border: 1px solid transparent;
 		justify-content: flex-start;
-		box-shadow: 0 2px 5px 1px rgba(0,0,0,.05);
+		// box-shadow: 0 2px 5px 1px rgba(0,0,0,.05);
 		padding: .75rem;
+		&:hover {
+			transition: .25s;
+			border: 1px solid #f0f0f2;
+			background-color: transparent;
+		}
 		& svg {
 			color: black;
 		}
@@ -207,7 +219,7 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 	#currency-menu .MuiMenu-paper {
-		width: 275px;
+		width: 300px;
 		margin-top: .25rem;
 	}
 	#gas-menu .MuiMenu-paper {
@@ -217,8 +229,8 @@ const GlobalStyle = createGlobalStyle`
 	}
 	#currency-menu .MuiMenu-paper .currency-btn {
 		cursor: pointer;
+		padding-left: 2rem;
 		align-items: center;
-		justify-content: center;
 		display: flex;
 		margin: .5rem;
 		border-radius: 8px;
@@ -227,22 +239,17 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 	#gas-menu .MuiMenu-paper .gas-btn {
-		text-align: center;
-		min-width: 80px;
-		border: 1px solid #F2F0FF;
-		border-radius: 8px;
+		margin: .25rem 2rem;
 		display: flex;
-		flex-direction: column;
-		padding: .25rem 0;
+		justify-content: space-between;
+		align-items: center;
+		min-width: 80px;
 		cursor: pointer;
 		&.active {
 			border-color: #917EFB;
 		}
 		&.active > .MuiTypography-overline {
 			color: #674DFA!important;
-		}
-		&:hover {
-			border-color: #917EFB;
 		}
 		& span {
 			text-transform: capitalize;

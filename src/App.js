@@ -16,6 +16,7 @@ import Performance from './pages/Performance';
 import News from './pages/News';
 import Alarm from './pages/Alarm';
 import Governance from './pages/Governance';
+import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
 
 const Container = styled('div')({
@@ -45,6 +46,7 @@ function App() {
               <Route exact path='/news' component={News} />
               <Route exact path='/alarm' component={Alarm} />
               <Route exact path='/governance' component={Governance} />
+              <Route exact path='/settings' component={Settings} />
               <Route component={NotFound}>
                 { <Redirect to="/invest" /> }
               </Route>

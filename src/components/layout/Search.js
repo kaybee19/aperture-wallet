@@ -20,9 +20,9 @@ const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: '8px',
   height: '100%',
-  backgroundColor: 'white',
+  backgroundColor: '#f0f0f2!important',
   width: '100%',
-  boxShadow: '0 2px 5px 1px rgba(0,0,0,.05)',
+  border: '1px solid #cccccc', 
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -38,22 +38,20 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
-    padding: '12px 0',
-    paddingLeft: '3rem',
-    width: '25ch',
+    padding: '9px 0',
+    paddingLeft: '1rem',
+    width: '45ch',
+    fontSize: '14px'
   },
 }));
 
 export default function PrimarySearchAppBar(props) {
 
   return (
-    <Box sx={{ marginRight: '.75rem' }}>
+    <Box sx={{ marginRight: '.75rem', maxHeight: '40px' }}>
       <Search style={props.invest && {boxShadow: 'none', backgroundColor: '#f5f8fb', width: '300px', marginBottom: '1rem'} }>
-        <SearchIconWrapper>
-          <SearchIcon />
-        </SearchIconWrapper>
         <StyledInputBase
-          placeholder="Search tokens, assets..."
+          placeholder="Search tokens, pools, and assets"
           inputProps={{ 'aria-label': 'search' }}
         />
       </Search>

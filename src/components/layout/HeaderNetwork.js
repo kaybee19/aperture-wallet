@@ -20,11 +20,15 @@ import { fortmatic, keystone, ledger, metamask, opera, xdefi, ethIcon, avaIcon, 
 const MyButton = styled(Button)({
   padding: '1rem',
   borderRadius: 8,
-  backgroundColor: '#5234F9!important',
   textTransform: 'capitalize',
+  boxShadow: 'none!important',
+  borderColor: '#917EFB!important',
+  backgroundColor: 'white!important',
+  color: '#7C65FA',
   maxHeight: '48px',
   '&:hover': {
-    backgroundColor: '#674DFA!important',
+    borderColor: '#5234F9!important',
+    backgroundColor: '#f6f8fb!important',
     transition: .25
   }
 });
@@ -33,11 +37,13 @@ const Icons = styled(Grid)({
   display: 'flex',
   alignItems: 'center',
   paddingBottom: '1rem',
-  margin: '.5rem 0',
+  margin: '.5rem',
+  borderRadius: 8,
+  border: '1px solid #F2F0FF',
   '&:hover': {
+    backgroundColor: '#f6f8fb',
     cursor: 'pointer',
-    borderRadius: 8,
-    boxShadow: '0 2px 5px 1px rgba(0,0,0,.1)',
+
   }
  });
 
@@ -63,7 +69,7 @@ export default function HeaderNetwork() {
 
   const icons = [
     { icon: avaIcon, name: 'Avalanche' },
-    { icon: binanceIcon, name: 'Binanace' },
+    { icon: binanceIcon, name: 'Binance' },
     { icon: fantomIcon, name: 'Fantom' },
     { icon: polygonIcon, name: 'Polygon' },
     { icon: ethIcon, name: 'Ethereum' },
@@ -82,7 +88,7 @@ export default function HeaderNetwork() {
     <div>
       <MyButton
         size='large'
-        variant="contained"
+        variant="outlined"
         id="network-btn"
         className='header-button'
         aria-controls="network-menu"
@@ -127,10 +133,10 @@ export default function HeaderNetwork() {
         </DialogTitle>
         <DialogContent>
           <DialogContentText sx={{ margin: '2rem 1rem' }}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} justifyContent='space-around'>
               {
                 networks.map((icon, i) => (
-                  <Icons onClick={handleClose} item xs={6}>
+                  <Icons onClick={handleClose} item xs={5}>
                     <img style={{ marginRight: '1rem' }} src={icon.icon} width='33' alt="icon" />
                     <Typography variant='body1' sx={{fontWeight: 500}}>{icon.name}</Typography>
                   </Icons>

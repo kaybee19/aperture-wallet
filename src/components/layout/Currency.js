@@ -22,15 +22,15 @@ export default function Currency() {
   };
 
   const currency = [
-    { icon: usd, code: 'usd' },
-    { icon: eur, code: 'eur' },
-    { icon: cny, code: 'cny' },
-    { icon: inr, code: 'inr' },
-    { icon: cad, code: 'cad' },
-    { icon: gbp, code: 'gbp' },
-    { icon: jpy, code: 'jpy' },
-    { icon: rub, code: 'rub' },
-    { icon: aud, code: 'aud' },
+    { icon: usd, code: 'usd', full: 'US Dollar' },
+    { icon: eur, code: 'eur', full: 'Euro' },
+    { icon: cny, code: 'cny', full: 'Chinese Yuan' },
+    { icon: inr, code: 'inr', full: 'Indian Rupee' },
+    { icon: cad, code: 'cad', full: 'Canadian Dollar' },
+    { icon: gbp, code: 'gbp', full: 'British Pound' },
+    { icon: jpy, code: 'jpy', full: 'Japanese Yen' },
+    { icon: rub, code: 'rub', full: 'Russian Ruble' },
+    { icon: aud, code: 'aud', full: 'Australian Dollar' },
   ];
 
   return (
@@ -45,17 +45,18 @@ export default function Currency() {
       >
         <img src={currency[0].icon} width='20' alt="currency icon" />
         <Typography variant='overline'>{currency[0].code}</Typography>
+        <DownIcon />
       </Button>
       <Menu
         id="currency-menu"
         anchorEl={anchorEl}
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'left',
+          horizontal: 'right',
         }}
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'left',
+          horizontal: 'right',
         }}
         open={open}
         onClose={handleClose}
@@ -63,17 +64,17 @@ export default function Currency() {
           'aria-labelledby': 'currency-btn',
         }}
       >
-      	<Grid container justifyContent='space-evenly'>
-      		
+      	<div>
         {
           currency.map((cur, i) => (
-            <Grid item xs={12} md={3} key={i} onClick={handleClose} className='currency-btn'>
+            <Grid item xs={12} key={i} onClick={handleClose} className='currency-btn'>
               <img src={cur.icon} width='20' alt='currency icon' />
-              <Typography sx={{ marginLeft: 1 }} variant='overline'>{cur.code}</Typography>
+              <Typography sx={{ margin: '0 .5rem' }} variant='overline'>{cur.code}</Typography>
+              <Typography sx={{ margin: '0 .5rem', fontWeight: 500 }} variant='overline'>{cur.full}</Typography>
             </Grid>
           ))
         }
-      	</Grid>
+      	</div>
       </Menu>
     </div>
   );

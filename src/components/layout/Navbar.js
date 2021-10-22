@@ -23,6 +23,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import RedeemIcon from '@mui/icons-material/Redeem';
 import PersonIcon from '@mui/icons-material/PersonOutline';
 import ChevronLeft from '@mui/icons-material/ChevronLeft';
+import { Instagram, LinkedIn, Twitter, Facebook } from '@mui/icons-material';
 
 const PaperWrap = styled(Paper)({
   display: 'flex',
@@ -35,6 +36,26 @@ const ArrowType = styled(Typography)({
 	alignItems: 'center'
 });
 
+const Wrapper = styled('div')({
+	display: 'flex',
+	width: 'fit-content',
+	justifyContent: 'space-between',
+	alignItems: 'center',
+	padding: '0rem',
+});
+
+const Icons = styled('div')({
+	display: 'flex',
+});
+
+const Icon = (props) => {
+	return(
+		<a target='_blank' rel="noreferrer" href={props.link}>
+			<span style={{ color: 'black' }}>{props.icon}</span>
+		</a>
+	)
+};
+
 export default function Navbar() {
 
   let location = useLocation();
@@ -46,18 +67,27 @@ export default function Navbar() {
 		{ img: <NewsIcon />, text: 'news' },
 		{ img: <AlarmIcon />, text: 'alarm' },
 		{ img: <GovernIcon />, text: 'governance' },
+		{ img: <SettingsIcon />, text: 'settings' },
 	]
+
+	const iconLinks = [
+		{link: 'https://www.instagram.com', icon: <Instagram /> },
+		{link: 'https://www.linkedin.com', icon: <LinkedIn /> },
+		{link: 'http://twitter.com', icon: <Twitter /> },
+		{link: 'https://www.facebook.com', icon: <Facebook /> },
+	];
+
 
 	return (
 		<div className='nav-container'>
 			<nav className='nav-body'>
-				<Box sx={{ display: 'flex', alignItems: 'center' }}>
+{/*				<Box sx={{ display: 'flex', alignItems: 'center' }}>
 					<img src={logo} className='nav-logo' alt='aperture logo' width='33' />
 					<Typography sx={{ fontWeight: 'bold', marginLeft: '1rem', fontSize: '18px' }} variant='body1'>Aperture Finance</Typography>
-{/*					<Fab className='nav-fab' size="small">
+					<Fab className='nav-fab' size="small">
 						<ChevronLeft />
-					</Fab>*/}
-				</Box>
+					</Fab>
+				</Box>*/}
 				<Box className='nav-user'>
 					<PaperWrap className='user-details' elevation={0}>
 						<div>
@@ -84,9 +114,24 @@ export default function Navbar() {
 					}
 				</Box>
 				<hr />
-				<Paper elevation={0} className='item nav-settings'>
-					<span className='item-icon'><SettingsIcon /></span>
-					<Typography sx={{ color: '#668A99', fontWeight: '500' }} variant='body2'>Settings</Typography>
+				<Paper elevation={0} className='nav-settings'>
+					<Link className='linkClass' to='/'>
+						<img src={logo} width='33' alt="logo" />
+					</Link>
+					<Wrapper>
+						<Icons>
+							{
+								iconLinks.map((icon, i) => (
+									<Icon link={icon.link} icon={icon.icon} key={i} />
+								))
+							}					
+						</Icons>
+					</Wrapper>
+					<div>
+						<Typography sx={{cursor: 'pointer', fontWeight: 500}} variant='caption'>Privacy Policy</Typography>
+						<Typography sx={{cursor: 'pointer', fontWeight: 500}} variant='caption'>Terms & Conditions</Typography>
+					</div>
+					<Typography sx={{cursor: 'pointer', fontWeight: 500}} variant='caption'>© Aperture Finance 2021</Typography>
 				</Paper>
 			</nav>
 		</div>

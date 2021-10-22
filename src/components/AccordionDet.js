@@ -17,6 +17,9 @@ import { ethIcon, avaIcon, fantomIcon, binanceIcon, polygonIcon } from '../asset
 
 const AccordionDet = styled(AccordionDetails)({
   padding: '2rem',
+  backgroundColor: '#f0f0f2',
+  borderBottomLeftRadius: '8px',
+  borderBottomRightRadius: '8px',
   '& fieldset': {
     border: '0!important',
     boxShadow: '0 2px 5px 1px rgb(0 0 0 / 3%)!important',

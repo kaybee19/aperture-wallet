@@ -20,13 +20,13 @@ export default function Header() {
 
 	return (
 		<div className='header'>
-			<span>
 			<Search />
+			<span>
 				<Currency />
 				<Gas />
-				{/*<Settings />*/}
+				<HeaderNetwork />
 			</span>
-			<HeaderNetwork />
+			{/*<Settings />*/}
 		</div>
 	);
 };
