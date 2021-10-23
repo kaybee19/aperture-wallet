@@ -29,6 +29,9 @@ const GlobalStyle = createGlobalStyle`
 		justify-content: center;
 		align-items: center;
 	}
+	.MuiTablePagination-selectLabel, .MuiTablePagination-input {
+		display: none
+	}
 
 	/*-- Nav --*/
 
@@ -155,12 +158,20 @@ const GlobalStyle = createGlobalStyle`
 	.nav-container .nav-settings {
 		margin-top: auto;
 		background-color: transparent;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     & div {
     	margin-top: .75rem;
     	display: flex;
-    	justify-content: space-between;
     	width: 100%;
+    }
+    & hr {
+    	border: 0;
+    	border-top: 1px solid #cccccc;
+    }
+    & .nav-logo {
+    	background-color: transparent;
+    	box-shadow: none;
+    	margin-right: .5rem;
     }
 	}
 

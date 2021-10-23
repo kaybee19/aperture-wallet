@@ -62,7 +62,7 @@ const BgImage = styled('img')({
 const Flex = styled('div')({
 	display: 'flex',
 	margin: 'auto',
-	minWidth: '80px',
+	minWidth: '100px',
 	flexDirection: 'column',
 	'&:last-child': {
 		marginRight: 0,

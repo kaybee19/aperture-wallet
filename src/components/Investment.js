@@ -24,9 +24,6 @@ import AccordionDet from './AccordionDet';
 
 const Container = styled('div')({
 	margin: '1.5rem 0 0',
-	'& .MuiTablePagination-selectLabel, .MuiTablePagination-input': {
-		display: 'none'
-	}
 });
 
 const Wrapper = styled('div')({
@@ -193,7 +190,7 @@ export default function Investment() {
 				<Search invest />
 		    <TablePagination
 		      component="div"
-		      count={100}
+		      count={50}
 		      page={page}
 		      onPageChange={handleChangePage}
 		      rowsPerPage={rowsPerPage}

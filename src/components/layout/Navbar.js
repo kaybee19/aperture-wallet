@@ -23,7 +23,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import RedeemIcon from '@mui/icons-material/Redeem';
 import PersonIcon from '@mui/icons-material/PersonOutline';
 import ChevronLeft from '@mui/icons-material/ChevronLeft';
-import { Instagram, LinkedIn, Twitter, Facebook } from '@mui/icons-material';
+import { Instagram, LinkedIn, Twitter, Facebook, Telegram } from '@mui/icons-material';
 
 const PaperWrap = styled(Paper)({
   display: 'flex',
@@ -46,12 +46,20 @@ const Wrapper = styled('div')({
 
 const Icons = styled('div')({
 	display: 'flex',
+	marginLeft: '.25rem',
+	'& span': {
+		color: '#8b8b8c',
+		marginRight: '1rem',
+		'&:hover': {
+			color: '#5234F9'
+		}
+	}
 });
 
 const Icon = (props) => {
 	return(
 		<a target='_blank' rel="noreferrer" href={props.link}>
-			<span style={{ color: 'black' }}>{props.icon}</span>
+			<span>{props.icon}</span>
 		</a>
 	)
 };
@@ -64,9 +72,9 @@ export default function Navbar() {
 	const icons = [
 		{ img: <InvestIcon />, text: 'invest' },
 		{ img: <PerformanceIcon />, text: 'performance' },
-		{ img: <NewsIcon />, text: 'news' },
 		{ img: <AlarmIcon />, text: 'alarm' },
 		{ img: <GovernIcon />, text: 'governance' },
+		{ img: <NewsIcon />, text: 'news' },
 		{ img: <SettingsIcon />, text: 'settings' },
 	]
 
@@ -75,6 +83,7 @@ export default function Navbar() {
 		{link: 'https://www.linkedin.com', icon: <LinkedIn /> },
 		{link: 'http://twitter.com', icon: <Twitter /> },
 		{link: 'https://www.facebook.com', icon: <Facebook /> },
+		{link: 'https://telegram.org', icon: <Telegram /> },
 	];
 
 
@@ -115,6 +124,15 @@ export default function Navbar() {
 				</Box>
 				<hr />
 				<Paper elevation={0} className='nav-settings'>
+					<Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start!important' }}>
+						<a href="https://aperture.netlify.app/" target='_blank' className='linkClass'>
+							<img src={logo} className='nav-logo' alt='aperture logo' width='25' />
+						</a>
+						<a href="https://aperture.netlify.app/" target='_blank' className='linkClass'>
+							<Typography sx={{ fontWeight: 'bold', fontSize: '14px' }}>Aperture Finance</Typography>
+						</a>
+					</Box>
+					<hr />
 					<Wrapper>
 						<Icons>
 							{
@@ -124,12 +142,12 @@ export default function Navbar() {
 							}					
 						</Icons>
 					</Wrapper>
-					<div>
+{/*					<div>
 						<Typography sx={{cursor: 'pointer', fontWeight: 500}} variant='caption'>Privacy Policy</Typography>
 						<Typography sx={{cursor: 'pointer', fontWeight: 500}} variant='caption'>Terms & Conditions</Typography>
 					</div>
 					<Typography sx={{cursor: 'pointer', fontWeight: 500}} variant='caption'>© Aperture Finance 2021</Typography>
-				</Paper>
+*/}				</Paper>
 			</nav>
 		</div>
 	);
