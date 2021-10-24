@@ -21,7 +21,7 @@ export default class PrivacySettings extends React.Component {
 							<Typography sx={{fontSize:13}} variant='body2'>Improve our app experience by sharing anonymous statistics about how you use Aperture Finance.</Typography>
 							<Typography sx={{fontSize:13}} variant='body2'>We will not associate any of this to you and your personal data will not be sent to us.</Typography>
 						</span>
-						<Switch sx={{marginLeft:'1rem'}} defaultChecked />
+						<Switch sx={{marginLeft:'1rem'}} color='secondary' defaultChecked />
 					</div>
 				</Grid>
 				<Grid sx={{marginBottom:'1rem'}} item xs={12}>
@@ -31,7 +31,7 @@ export default class PrivacySettings extends React.Component {
 							<Typography sx={{fontSize:13}} variant='body2'>We use the chat for easy communication with our DeFi users.</Typography>
 							<Typography sx={{fontSize:13}} variant='body2'>To speak with a friendly Aperture Finance team member, please activate the support chat here.</Typography>
 						</span>
-						<Switch sx={{marginLeft:'1rem'}} defaultChecked />
+						<Switch sx={{marginLeft:'1rem'}} color='secondary' defaultChecked />
 					</div>
 				</Grid>
 			</Grid>
