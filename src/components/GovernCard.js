@@ -71,11 +71,11 @@ export default function GovernCard(props) {
 
 	return (
 		<Grid item xs={12} md={6}>
-			<GridWrapper style={{ opacity: card.status !== 'in progress' ? .5 : 1 }}>
+			<GridWrapper style={card.status !== 'in progress' ? { opacity: .5, backgroundColor: '#f0f0f2' } : {}}>
 				<Typography sx={{color:'#76808f', fontWeight: 500}} variant='body2'>ID: {card.id}</Typography>
 				<Box sx={{display:'flex', alignItems: 'center', marginTop: '1rem'}}>
 					{
-						card.status === 'passed' ? <Passed sx={{color:'#50af94'}} /> : (card.status === 'rejected' ? <Rejected sx={{color:'#FB4D3D'}} /> : (card.status === 'executed' ? <Executed sx={{color:'#674DFA'}} /> : <Progress sx={{color:'#674DFA'}} />))
+						card.status === 'passed' ? <Passed sx={{color:'#674DFA'}} /> : (card.status === 'rejected' ? <Rejected sx={{color:'#FB4D3D'}} /> : (card.status === 'executed' ? <Executed sx={{color:'#50af94'}} /> : <Progress sx={{color:'#674DFA'}} />))
 					}
 					<Typography sx={{marginLeft:'.5rem', textTransform:'uppercase', fontWeight:500, color:'#76808f'}} variant='body2'>
 						{card.status}

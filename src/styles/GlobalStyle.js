@@ -279,8 +279,8 @@ const GlobalStyle = createGlobalStyle`
 			margin-top: 1.25rem;
 		}	
 	}
-	#settings-menu .MuiMenu-paper .settings-btn {
-		padding: 1rem 1.5rem;
+	.settingSlippage {
+		padding: .5rem .75rem;
 		border: 1px solid #F2F0FF;
 		border-radius: 8px;
 		margin: .25rem;

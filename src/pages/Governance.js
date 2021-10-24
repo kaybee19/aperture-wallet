@@ -57,7 +57,7 @@ export default function Governance() {
 		{id: 126, status: 'in progress', title: 'sony group (SONY)', votes: 75, time: 'Oct 31, 2021'},
 		{id: 125, status: 'rejected', title: 'workhorse group inc (WKHS)', votes: 75, time: 'Oct 15, 2021'},
 		{id: 124, status: 'passed', title: 'etsy inc (ETSY)', votes: 170, time: 'Oct 15, 2021'},
-		{id: 123, status: 'passed', title: 'nike, inc (NKE)', votes: 205, time: 'Oct 15, 2021'},
+		{id: 123, status: 'passed', title: 'nike, inc (NKE)', votes: 205, time: 'Oct 1, 2021'},
 		{id: 122, status: 'rejected', title: 'solana (SOL)', votes: 95, time: 'Oct 1, 2021'},
 		{id: 121, status: 'executed', title: 'monero (XMR)', votes: 180, time: 'Sep 15, 2021'},
 	]
