@@ -14,7 +14,7 @@ import Home from './pages/Home';
 import Invest from './pages/Invest';
 import Performance from './pages/Performance';
 import News from './pages/News';
-import Alarm from './pages/Alarm';
+import Alert from './pages/Alert';
 import Governance from './pages/Governance';
 import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
@@ -44,7 +44,7 @@ function App() {
               <Route exact path='/invest' component={Invest} />
               <Route exact path='/performance' component={Performance} />
               <Route exact path='/news' component={News} />
-              <Route exact path='/alarm' component={Alarm} />
+              <Route exact path='/alert' component={Alert} />
               <Route exact path='/governance' component={Governance} />
               <Route exact path='/settings' component={Settings} />
               <Route component={NotFound}>

@@ -6,41 +6,6 @@ import { styled } from '@mui/system';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
-const Wrapper = styled('div')({
-	textAlign: 'end',
-	margin: '1rem 0',
-	'& .toggleGroup': {
-		backgroundColor: '#f5f8fb',
-    padding: '.25rem',
-    borderRadius: '11px',
-	},
-	'& button': {
-		textTransform: 'capitalize',
-    padding: '0 16px',
-    fontSize: '12px',
-    color: 'black',
-    height: '35px',
-    border: 0,
-    '&:hover': {
-    	borderRadius: '8px!important'
-    }
-	},
-	'& button.Mui-selected': {
-		backgroundColor: 'white',
-		textTransform: 'capitalize',
-		fontWeight: 'bold',
-		boxShadow: '0 2px 5px 1px rgba(0,0,0,.05)',
-    borderRadius: '8px!important',
-    padding: '0 16px',
-    fontSize: '12px',
-    color: 'black',
-    height: '35px',
-    '&:hover': {
-    	backgroundColor: 'white'
-    }
-	},
-});
-
 const day = [
 	{ day: "Sep 24", value: 81050, },
 	{ day: "Sep 25", value: 84900, },
@@ -116,7 +81,7 @@ export default function Graph() {
 	return (
 		<React.Fragment>
 
-			<Wrapper>
+			<div className='toggleWrapper'>
 		    <ToggleButtonGroup
 		    	className='toggleGroup'
 		      color="primary"
@@ -128,7 +93,7 @@ export default function Graph() {
 		      <ToggleButton value="week">Week</ToggleButton>
 		      <ToggleButton value="month">Month</ToggleButton>
 		    </ToggleButtonGroup>
-	    </Wrapper>
+	    </div>
 
 			<Chart
 				appendPadding={[20, 0, 40, 0]}

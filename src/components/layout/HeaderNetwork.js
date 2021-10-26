@@ -22,12 +22,12 @@ const MyButton = styled(Button)({
   borderRadius: 8,
   textTransform: 'capitalize',
   boxShadow: 'none!important',
-  borderColor: '#917EFB!important',
+  borderColor: '#A697FC!important',
   backgroundColor: 'white!important',
-  color: '#7C65FA',
+  color: '#674DFA',
   maxHeight: '48px',
   '&:hover': {
-    borderColor: '#5234F9!important',
+    borderColor: '#674DFA!important',
     backgroundColor: '#f6f8fb!important',
     transition: .25
   }

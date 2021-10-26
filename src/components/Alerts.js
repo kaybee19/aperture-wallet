@@ -5,7 +5,7 @@ import { styled } from '@mui/system';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Accordion from '@mui/material/Accordion';
+import Button from '@mui/material/Button';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import TablePagination from '@mui/material/TablePagination';
 
@@ -34,14 +34,10 @@ const Wrapper = styled('div')({
 	top: 0,
   justifyContent: 'space-evenly',
   '&:hover': {
-  	backgroundColor: '#f0f0f2',
   	borderRadius: 8,
   	cursor: 'pointer',
   	transition: '.25s',
   	position: 'relative',
-  	'& > *': {
-  		borderBottom: '1px solid transparent',
-  	}
   }
 });
 
@@ -55,7 +51,7 @@ const WrapperBox = styled(Box)({
 	}
 });
 
-const AccordionBox = styled(Accordion)({
+const Body = styled('div')({
 	boxShadow: 'none!important',
 	'&:before': {
 		backgroundColor: 'transparent!important',
@@ -116,18 +112,36 @@ const Flex = styled('div')({
 	}
 });
 
+const AlertButton = styled(Button)({
+  borderRadius: '8px',
+  border: '1px solid #F7F7FF',
+  justifyContent: 'flex-start',
+  padding: '0.25rem 0.5rem',
+  color: '#FB4D3D',
+  fontWeight: 500,
+  backgroundColor: 'white!important',
+  '&:hover': {
+  	border: '1px solid #FB4D3D'
+  },
+  '&.expired': {
+  	paddingLeft: 0,
+  	paddingRight: 0,
+  	border: 0,
+  	color: '#668A99',
+  	'& span': {
+  		fontWeight: 600
+  	}
+  }
+});
+
 const AssetContainer = (props) => {
 	return (
-    <AccordionBox>
+    <Body>
 	    <AccordionSum
 	      // expandIcon={<ExpandMoreIcon />}
 	      aria-controls={`panel${props.i}-content`}
 	    >
 			<Wrapper>
-				<div style={{ position: 'relative' }}>
-					<BgImage width='33' src={props.backImg} alt="asset" />
-					<ForeImg width='30' src={props.img} alt="asset" />
-				</div>
 				<WrapperBox>
 					<Flex>
 						<Typography sx={{ position: 'relative', width: 'fit-content', fontWeight: 500}} variant='body2'>
@@ -137,27 +151,35 @@ const AssetContainer = (props) => {
 						<Typography sx={{fontSize: '11px!important', color: '#657793'}} variant='body2'>{props.assetType}</Typography>
 					</Flex>
 					<Flex>
-						<Typography className='percentClass' variant='body2'>
-							${	props.liquidity.toLocaleString() }
+						<Typography sx={{whiteSpace:'pre'}} className='percentClass' variant='body2'>
+							{props.percent > 0 ? 'Sell' : 'Buy'} <span style={{color:'#8b8b8c'}}> @{props.trade}</span>
+						</Typography>
+						<Typography sx={{fontSize: '12px!important', color: '#657793'}} variant='body2'>${props.value.toLocaleString()}</Typography>
+					</Flex>
+					<Flex>
+						<Typography className='percentClass' sx={{ color: props.percent > 0 ? '#50af94' : '#FB4D3D', fontWeight: 'bold' }} variant='body2'>
+							{	props.percent > 0 ? <UpwardIcon sx={{fontSize: 14, marginRight: .25}} /> : <DownwardIcon sx={{fontSize: 14, marginRight: .25}} /> }
+							( {props.percent}% )
 						</Typography>
 					</Flex>
 					<Flex>
 						<Typography className='percentClass' sx={{ fontWeight: 'bold' }} variant='body2'>
-							{props.percent}% (1y)
+							${props.percent > 0 ? (props.value+5000).toLocaleString() : (props.value-5000).toLocaleString()}
 						</Typography>
 					</Flex>
 					<div>
-						<KeyboardDown sx={{paddingTop: '.25rem', color:'#657793'}} />
+			      <AlertButton className={`${props.status === 'expired' && 'expired'} header-button`} sx={{float:'left'}}>
+			        <Typography variant='overline'>{props.status === 'expired' ? 'Expired' : 'Cancel'}</Typography>
+			      </AlertButton>
 					</div>
 				</WrapperBox>
 			</Wrapper>
 			</AccordionSum>
-			<AccordionDet invest />
-		</AccordionBox>
+		</Body>
 	)
 }
 
-export default function Investment() {
+export default function Alerts() {
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -171,53 +193,49 @@ export default function Investment() {
     setPage(0);
   };
 
-	const assets = [
-		{ img: avaIcon, backImg: binanceIcon, token: 'AVA', asset: 'AVA/BNB', assetType: 'Ethereum', liquidity: 2012875178, value: 22000, percent: .25 },
-		{ img: yfiIcon, backImg: ethIcon, token: 'YFI', asset: 'YFI/ETH', assetType: 'Ethereum', liquidity: 1526781091, value: 22000, percent: .16 },
-		{ img: ethIcon, backImg: daiIcon, token: 'ETH', asset: 'ETH/DAI', assetType: 'Ethereum', liquidity: 915273091, value: 35100, percent: .14 },
-		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Solana', liquidity: 761829012, value: 42000, percent: .16 },
-		{ img: btcIcon, backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mQQQ', assetType: 'Polygon', liquidity: 701928321, value: 37500, percent: .63 },
-		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mHOOD', assetType: 'Binance Smart Chain', liquidity: 673890218, value: 20000, percent: .29 },
-		{ img: binanceIcon, backImg: daiIcon, token: 'BNB', asset: 'BNB/DAI', assetType: 'Ethereum', liquidity: 621829031, value: 35100, percent: .54 },
-		{ img: btcIcon, backImg: ethIcon, token: 'BTC', asset: 'mcBTC', assetType: 'Polygon', liquidity: 581902129, value: 836866944, percent: .13 },
-		{ img: polygonIcon, backImg: btcIcon, badge: true, token: 'MATIC', asset: 'Δ-neutral-mCOIN', assetType: 'Binance Smart Chain', liquidity: 542678254, value: 20000, percent: .41 },
-		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Solana', liquidity: 498301923, value: 42000, percent: .35 },
+	const alertMockup = [
+		{ img: ethIcon, status: 'active', backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mSQ', assetType: 'Ethereum', trade: 1.721, value: 22000, percent: -25 },
+		{ img: ethIcon, status: 'active', backImg: daiIcon, token: 'ETH', asset: 'ETH/DAI', assetType: 'Ethereum', trade: 3.091, value: 35100, percent: 14 },
+		{ img: polygonIcon, status: 'active', backImg: btcIcon, badge: true, token: 'MATIC', asset: 'Δ-neutral-mCOIN', assetType: 'Ethereum', trade: 1.526, value: 22000, percent: 16 },
+		{ img: btcIcon, status: 'active', backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mQQQ', assetType: 'Polygon', trade: 0.719, value: 37500, percent: 63 },
+		{ img: tetherIcon, status: 'expired', backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Solana', trade: 7.618, value: 42000, percent: 26 },
+		{ img: ethIcon, status: 'expired', backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mHOOD', assetType: 'Binance Smart Chain', trade: 6.738, value: 20000, percent: -29 },
 	];
 
 	return (
 		<Container>
-			<Box sx={{ marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-				<Search invest />
-		    <TablePagination
-		      component="div"
-		      count={50}
-		      page={page}
-		      onPageChange={handleChangePage}
-		      rowsPerPage={rowsPerPage}
-		      onRowsPerPageChange={handleChangeRowsPerPage}
-		    />
-			</Box>
 			<Grid sx={{borderBottom: '1px solid #F2F0FF'}} container>
-				<Grid item xs={12} md={5}><Typography sx={{marginLeft: '6rem', fontWeight: 600}} variant='overline'>Pools</Typography></Grid>
-				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '2.5rem', fontWeight: 600}} variant='overline'>Liquidity</Typography></Grid>
-				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '3.5rem', fontWeight: 600}} variant='overline'>APR</Typography></Grid>
+				<Grid item xs={12} md={4}><Typography sx={{marginLeft: '4.75rem', fontWeight: 600}} variant='overline'>Asset</Typography></Grid>
+				<Grid item xs={12} md={2}><Typography sx={{marginLeft: '-.5rem', fontWeight: 600}} variant='overline'>Alert</Typography></Grid>
+				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '2.75rem', fontWeight: 600}} variant='overline'>Profit</Typography></Grid>
+				<Grid item xs={12} md={2}><Typography sx={{marginLeft: '-.5rem', fontWeight: 600}} variant='overline'>TVL</Typography></Grid>
 			</Grid>
 			{
-				assets.map((ass, i) => (
+				alertMockup.map((ass, i) => (
 					<AssetContainer
 						img={ass.img}
 						key={i}
 						i={i}
 						badge={ass.badge}
+						status={ass.status}
 						backImg={ass.backImg}
 						asset={ass.asset}
 						assetType={ass.assetType}
-						liquidity={ass.liquidity}
+						trade={ass.trade}
 						value={ass.value}
 						percent={ass.percent}
 					/> )
 				)
 			}
+	    <TablePagination
+	    	sx={{marginTop:'2rem'}}
+	      component="div"
+	      count={10}
+	      page={page}
+	      onPageChange={handleChangePage}
+	      rowsPerPage={rowsPerPage}
+	      onRowsPerPageChange={handleChangeRowsPerPage}
+	    />
 		</Container>
 	);
 };

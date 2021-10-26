@@ -196,6 +196,7 @@ const GlobalStyle = createGlobalStyle`
 			transition: .25s;
 			border: 1px solid #f0f0f2;
 			background-color: transparent;
+			box-shadow: 0 2px 2.5px 1px rgb(0 0 0 / 1%)
 		}
 		& svg {
 			color: black;
@@ -296,6 +297,43 @@ const GlobalStyle = createGlobalStyle`
 			cursor: pointer;
 			border: 1px solid #674DFA;
 			color: #674DFA;
+		}
+	}
+
+	/*-- Alert --*/
+
+	.toggleWrapper {
+		text-align: end;
+		margin: 1rem 0;
+		& .toggleGroup {
+			background-color: #f5f8fb;
+	    padding: .25rem;
+	    border-radius: 11px;
+		}
+		& button {
+			text-transform: capitalize;
+	    padding: 0 16px;
+	    font-size: 12px;
+	    color: black;
+	    height: 35px;
+	    border: 0;
+	    &:hover {
+	    	border-radius: 8px!important;
+	    }
+		}
+		& button.Mui-selected {
+			background-color: white;
+			text-transform: capitalize;
+			font-weight: bold;
+			box-xhadow: 0 2px 5px 1px rgba(0,0,0,.05);
+	    border-radius: 8px!important;
+	    padding: 0 16px;
+	    font-size: 12px;
+	    color: black;
+	    height: 35px;
+	    &:hover {
+	    	background-color: white;
+	    }
 		}
 	}
 

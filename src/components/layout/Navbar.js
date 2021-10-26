@@ -72,7 +72,7 @@ export default function Navbar() {
 	const icons = [
 		{ img: <InvestIcon />, text: 'invest' },
 		{ img: <PerformanceIcon />, text: 'performance' },
-		{ img: <AlarmIcon />, text: 'alarm' },
+		{ img: <AlarmIcon />, text: 'alert' },
 		{ img: <GovernIcon />, text: 'governance' },
 		{ img: <NewsIcon />, text: 'news' },
 		{ img: <SettingsIcon />, text: 'settings' },
