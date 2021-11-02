@@ -198,12 +198,12 @@ export default function Alerts() {
   };
 
 	const alertMockup = [
-		{ img: ethIcon, status: 'active', backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mSQ', assetType: 'Terra', trade: 1.721, value: 22000, percent: -25 },
+		{ img: ethIcon, status: 'active', backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mSQ', assetType: 'Terra', trade: 1.721, value: 22000, percent: 25 },
 		{ img: ethIcon, status: 'active', backImg: daiIcon, token: 'ETH', asset: 'ETH/DAI', assetType: 'Ethereum', trade: 3.091, value: 35100, percent: 14 },
 		{ img: polygonIcon, status: 'active', backImg: btcIcon, badge: true, token: 'MATIC', asset: 'Δ-neutral-mCOIN', assetType: 'Terra', trade: 1.526, value: 22000, percent: 16 },
 		{ img: btcIcon, status: 'active', backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mQQQ', assetType: 'Terra', trade: 0.719, value: 37500, percent: 63 },
 		{ img: tetherIcon, status: 'expired', backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Solana', trade: 7.618, value: 42000, percent: 26 },
-		{ img: ethIcon, status: 'expired', backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mHOOD', assetType: 'Terra', trade: 6.738, value: 20000, percent: -29 },
+		{ img: ethIcon, status: 'expired', backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mHOOD', assetType: 'Terra', trade: 6.738, value: 20000, percent: 29 },
 	];
 
 	return (
