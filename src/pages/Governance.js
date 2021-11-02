@@ -52,14 +52,14 @@ export default function Governance() {
   };
 
 	const govern = [
-		{id: 128, status: 'in progress', title: 'alpahbet inc. (GOOGL)', votes: 85, time: 'Nov 15, 2021'},
-		{id: 127, status: 'in progress', title: 'baidu inc (BIDY)', votes: 165, time: 'Nov 15, 2021'},
-		{id: 126, status: 'in progress', title: 'sony group (SONY)', votes: 75, time: 'Oct 31, 2021'},
-		{id: 125, status: 'rejected', title: 'workhorse group inc (WKHS)', votes: 75, time: 'Oct 15, 2021'},
-		{id: 124, status: 'passed', title: 'etsy inc (ETSY)', votes: 170, time: 'Oct 15, 2021'},
-		{id: 123, status: 'passed', title: 'nike, inc (NKE)', votes: 205, time: 'Oct 1, 2021'},
-		{id: 122, status: 'rejected', title: 'solana (SOL)', votes: 95, time: 'Oct 1, 2021'},
-		{id: 121, status: 'executed', title: 'monero (XMR)', votes: 180, time: 'Sep 15, 2021'},
+		{id: 128, status: 'in progress', title: 'Delta-neutral-mCOIN', votes: 85, time: 'Nov 15, 2021'},
+		{id: 127, status: 'in progress', title: 'New Chain Avalanche', votes: 165, time: 'Nov 15, 2021'},
+		{id: 126, status: 'in progress', title: 'New Chain Celo', votes: 75, time: 'Oct 31, 2021'},
+		{id: 125, status: 'rejected', title: ' Adding Pylon Protocol', votes: 75, time: 'Oct 15, 2021'},
+		{id: 124, status: 'passed', title: 'Adding SolFarm Protocol', votes: 170, time: 'Oct 15, 2021'},
+		{id: 123, status: 'passed', title: 'New Bridge Thor Chain', votes: 205, time: 'Oct 1, 2021'},
+		{id: 122, status: 'rejected', title: 'Adding New Bridge AllBridge', votes: 95, time: 'Oct 1, 2021'},
+		{id: 121, status: 'executed', title: 'Adding New Bridge Wormhole', votes: 180, time: 'Sep 15, 2021'},
 	]
 
 	return (

@@ -16,17 +16,17 @@ export default function Invest() {
 	return (
 		<div>
 			<Grid sx={{ padding: '0 2rem', margin: 'auto', top: '-16px', left: '-16px', position: 'relative' }} container spacing={2}>
-				<Grid item xs={12} md={8}>
+				<Grid item xs={12} md={12}>
 					<Wrapper auto text='Portfolio'>
 						<Portfolio />
 					</Wrapper>
 				</Grid>
-				<Grid item xs={12} xs={4}>
+{/*				<Grid item xs={12} xs={4}>
 					<Wrapper text='Trending Assets' auto>
 						<Trending />
 					</Wrapper>
-				</Grid>
-				<Grid item xs={12} md={8}>
+				</Grid>*/}
+				<Grid item xs={12} md={12}>
 					<Wrapper text='Explore Investments' auto>
 						<Investment />
 					</Wrapper>

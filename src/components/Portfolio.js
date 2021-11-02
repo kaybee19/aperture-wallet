@@ -113,6 +113,15 @@ const Flex = styled('div')({
 	}
 });
 
+const Risk = styled(Grid)({
+	'& .box': {
+		height: '10px',
+		borderRadius: 2,
+		margin: '0 1px'
+	}
+});
+
+
 const AssetContainer = (props) => {
 	return (
     <AccordionBox>
@@ -144,6 +153,14 @@ const AssetContainer = (props) => {
 							{props.percent}%
 						</Typography>
 					</Flex>
+					<Flex>
+					<Risk container>
+						{props.risk.map((r, i) => (
+								<Grid className='box' item sx={{width: i === 2 ? '45px' : '10px', backgroundColor: `${r}`}}>
+								</Grid>
+							))}
+					</Risk>
+					</Flex>
 					<div>
 						<KeyboardDown sx={{paddingTop: '.25rem', color:'#657793'}} />
 					</div>
@@ -155,23 +172,29 @@ const AssetContainer = (props) => {
 	)
 }
 
+// gre #53af62
+// yel #fbd232
+// org #f29d30
+// red #d64043
+
+
 export default function Portfolio() {
 
 	const assets = [
-		{ img: ethIcon, backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mSQ', assetType: 'Ethereum', tvl: 10, value: 20000, percent: 100 },
-		{ img: ethIcon, backImg: daiIcon, token: 'ETH', asset: 'DAI/ETH', assetType: 'Binance Smart Chain', tvl: 25, value: 35100, percent: 40 },
-		{ img: tetherIcon, backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Ethereum', tvl: 37, value: 42000, percent: 15 },
-		{ img: btcIcon, backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mSPY', assetType: 'Solana', tvl: -11, value: 20940, percent: -5 },
-		{ img: yfiIcon, backImg: ethIcon, token: 'YFI', asset: 'YFI/ETH', assetType: 'Ethereum', tvl: -15, value: 22000, percent: -10 },
+		{ img: ethIcon, risk: ['#fbd232', '#95e200', '#53af62'], backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mSQ', assetType: 'Terra', tvl: 10, value: 20000, percent: 100 },
+		{ img: ethIcon, risk: ['#fbd232', '#f29d30', '#d64043'], backImg: daiIcon, token: 'ETH', asset: 'DAI/ETH', assetType: 'Binance Smart Chain', tvl: 25, value: 35100, percent: 40 },
+		{ img: tetherIcon, risk: ['#d64043', '#f29d30', '#fbd232'], backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Ethereum', tvl: 37, value: 42000, percent: 15 },
+		{ img: btcIcon, risk: ['#fbd232', '#95e200', '#53af62'], backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mSPY', assetType: 'Terra', tvl: 11, value: 20940, percent: 5 },
+		{ img: yfiIcon, risk: ['#d64043', '#fbd232', '#f29d30'], backImg: ethIcon, token: 'YFI', asset: 'YFI/ETH', assetType: 'Ethereum', tvl: 15, value: 22000, percent: 10 },
 	]
 
 	return (
 		<Container>
 			<Grid sx={{borderBottom: '1px solid #F2F0FF'}} container>
-				<Grid item={12} md={1}></Grid>
-				<Grid item xs={12} md={4}><Typography sx={{marginLeft: '2.5rem', fontWeight: 600}} variant='overline'>Asset</Typography></Grid>
-				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '3rem', fontWeight: 600}} variant='overline'>TVL</Typography></Grid>
-				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '3rem', fontWeight: 600}} variant='overline'>APR</Typography></Grid>
+				<Grid item xs={12} md={4}><Typography sx={{marginLeft: '6rem', fontWeight: 600}} variant='overline'>Pools</Typography></Grid>
+				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '2rem', fontWeight: 600}} variant='overline'>TVL</Typography></Grid>
+				<Grid item xs={12} md={2}><Typography sx={{marginLeft: '0rem', fontWeight: 600}} variant='overline'>APR</Typography></Grid>
+				<Grid item xs={12} md={2}><Typography sx={{marginLeft: '3.5rem', fontWeight: 600}} variant='overline'>Risk Level</Typography></Grid>
 			</Grid>
 			{
 				assets.map((ass, i) => (
@@ -180,6 +203,7 @@ export default function Portfolio() {
 						key={i}
 						i={i}
 						badge={ass.badge}
+						risk={ass.risk}
 						backImg={ass.backImg}
 						asset={ass.asset}
 						assetType={ass.assetType}

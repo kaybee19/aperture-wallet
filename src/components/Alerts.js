@@ -142,6 +142,10 @@ const AssetContainer = (props) => {
 	      aria-controls={`panel${props.i}-content`}
 	    >
 			<Wrapper>
+				<div style={{ position: 'relative' }}>
+					<BgImage width='33' src={props.backImg} alt="asset" />
+					<ForeImg width='30' src={props.img} alt="asset" />
+				</div>
 				<WrapperBox>
 					<Flex>
 						<Typography sx={{ position: 'relative', width: 'fit-content', fontWeight: 500}} variant='body2'>
@@ -194,21 +198,21 @@ export default function Alerts() {
   };
 
 	const alertMockup = [
-		{ img: ethIcon, status: 'active', backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mSQ', assetType: 'Ethereum', trade: 1.721, value: 22000, percent: -25 },
+		{ img: ethIcon, status: 'active', backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mSQ', assetType: 'Terra', trade: 1.721, value: 22000, percent: -25 },
 		{ img: ethIcon, status: 'active', backImg: daiIcon, token: 'ETH', asset: 'ETH/DAI', assetType: 'Ethereum', trade: 3.091, value: 35100, percent: 14 },
-		{ img: polygonIcon, status: 'active', backImg: btcIcon, badge: true, token: 'MATIC', asset: 'Δ-neutral-mCOIN', assetType: 'Ethereum', trade: 1.526, value: 22000, percent: 16 },
-		{ img: btcIcon, status: 'active', backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mQQQ', assetType: 'Polygon', trade: 0.719, value: 37500, percent: 63 },
+		{ img: polygonIcon, status: 'active', backImg: btcIcon, badge: true, token: 'MATIC', asset: 'Δ-neutral-mCOIN', assetType: 'Terra', trade: 1.526, value: 22000, percent: 16 },
+		{ img: btcIcon, status: 'active', backImg: ethIcon, badge: true, token: 'BTC', asset: 'Δ-neutral-mQQQ', assetType: 'Terra', trade: 0.719, value: 37500, percent: 63 },
 		{ img: tetherIcon, status: 'expired', backImg: ethIcon, token: 'USDT', asset: 'USDT/ETH', assetType: 'Solana', trade: 7.618, value: 42000, percent: 26 },
-		{ img: ethIcon, status: 'expired', backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mHOOD', assetType: 'Binance Smart Chain', trade: 6.738, value: 20000, percent: -29 },
+		{ img: ethIcon, status: 'expired', backImg: btcIcon, badge: true, token: 'ETH', asset: 'Δ-neutral-mHOOD', assetType: 'Terra', trade: 6.738, value: 20000, percent: -29 },
 	];
 
 	return (
 		<Container>
 			<Grid sx={{borderBottom: '1px solid #F2F0FF'}} container>
-				<Grid item xs={12} md={4}><Typography sx={{marginLeft: '4.75rem', fontWeight: 600}} variant='overline'>Asset</Typography></Grid>
-				<Grid item xs={12} md={2}><Typography sx={{marginLeft: '-.5rem', fontWeight: 600}} variant='overline'>Alert</Typography></Grid>
-				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '2.75rem', fontWeight: 600}} variant='overline'>Profit</Typography></Grid>
-				<Grid item xs={12} md={2}><Typography sx={{marginLeft: '-.5rem', fontWeight: 600}} variant='overline'>TVL</Typography></Grid>
+				<Grid item xs={12} md={4}><Typography sx={{marginLeft: '6rem', fontWeight: 600}} variant='overline'>Asset</Typography></Grid>
+				<Grid item xs={12} md={2}><Typography sx={{marginLeft: '1rem', fontWeight: 600}} variant='overline'>Alert</Typography></Grid>
+				<Grid item xs={12} md={3}><Typography sx={{marginLeft: '3.75rem', fontWeight: 600}} variant='overline'>Profit</Typography></Grid>
+				<Grid item xs={12} md={2}><Typography sx={{marginLeft: '1rem', fontWeight: 600}} variant='overline'>TVL</Typography></Grid>
 			</Grid>
 			{
 				alertMockup.map((ass, i) => (
